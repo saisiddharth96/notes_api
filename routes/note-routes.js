@@ -1,6 +1,11 @@
 const ObjectID = require("mongodb").ObjectID;
 
 module.exports = function(app, db) {
+  app.get("/", function(res,res){
+    res.send("Welcome to the API!").status(200);
+  });
+  
+  
   //Read Operation
   app.get("/notes/:id", function(req, res) {
     const id = req.params.id;
@@ -61,7 +66,5 @@ app.put('/notes/:id', (req, res) => {
     });
   });
 
-  app.get("/", function(res,res){
-    res.send("Welcome to the API!").status(200);
-  });
+  
 };
