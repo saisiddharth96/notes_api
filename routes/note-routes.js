@@ -1,7 +1,7 @@
 const ObjectID = require("mongodb").ObjectID;
 
 module.exports = function(app, db) {
-  app.get("/", function(res,res){
+  app.get("/", function(req,res){
     res.send("Welcome to the API!").status(200);
   });
   
