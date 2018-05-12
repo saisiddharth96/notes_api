@@ -20,7 +20,7 @@ module.exports = function(app, db) {
     console.log(req.body);
     // res.send("Acknowledged!")
     const note = {
-      text: req.body.body,
+      text: req.body.text,
       title: req.body.title,
       createdAt: new Date(),
       lastEdited: null

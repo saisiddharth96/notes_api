@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const dbURL = require("./config/db.js");
 const notePostRoute = require("./routes/index.js");
 
+const dbmLabURL = require("./config/db.js").urlMlab;
+
 
 const app = express();
 const port = 8000 || process.env.PORT;
@@ -19,7 +21,20 @@ const port = 8000 || process.env.PORT;
 //To get the data in urlEncoded form
 app.use(bodyParser.urlencoded({ extended: true }));
 
-MongoClient.connect(dbURL.url, function(err, db) {
+//For local host connection
+// MongoClient.connect(dbURL.url, function(err, db) {
+//   if (err) return console.log("Error connecting to DB " + err);
+//   console.log("Connected to Database");
+  
+//   notePostRoute(app, db);
+
+//   app.listen(port, function() {
+//     console.log("Server started on port " + port);
+//   });
+// });
+
+//For mLab connection
+MongoClient.connect(dbmLabURL, function(err, db) {
   if (err) return console.log("Error connecting to DB " + err);
   console.log("Connected to Database");
   
