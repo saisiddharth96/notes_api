@@ -60,4 +60,8 @@ app.put('/notes/:id', (req, res) => {
       } 
     });
   });
+
+  app.get("/", function(res,res){
+    res.send("Welcome to the API!").status(200);
+  });
 };

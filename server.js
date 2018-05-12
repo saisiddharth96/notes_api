@@ -14,9 +14,10 @@ const port = 8000 || process.env.PORT;
 {
   /*
       Use this line to get the passed json data from postman 
-      //app.use(bodyParser.json())
+      
   */
 }
+// app.use(bodyParser.json())
 
 //To get the data in urlEncoded form
 app.use(bodyParser.urlencoded({ extended: true }));
